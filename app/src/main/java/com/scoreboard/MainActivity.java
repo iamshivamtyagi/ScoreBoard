@@ -9,43 +9,103 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvScoreA;
-    Button  butOneRun,butFourRun,butSixRun;
-
+    boolean A=false,B=false;
+    TextView tvScore;
+    Button  butOneRunA,butFourRunA,butSixRunA,butOneRunB,butFourRunB,butSixRunB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvScoreA = findViewById(R.id.tvScoreA);
-        butOneRun = findViewById(R.id.butOneRun);
-        butFourRun = findViewById(R.id.butFourRun);
-        butSixRun = findViewById(R.id.butSixRun);
+        butOneRunB = findViewById(R.id.butOneRunB);
+        butFourRunB = findViewById(R.id.butFourRunB);
+        butSixRunB = findViewById(R.id.butSixRunB);
+        butOneRunA = findViewById(R.id.butOneRunA);
+        butFourRunA = findViewById(R.id.butFourRunA);
+        butSixRunA = findViewById(R.id.butSixRunA);
 
-        butOneRun.setOnClickListener(new View.OnClickListener() {
+        butOneRunA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int prev_score = Integer.parseInt(tvScoreA.getText() + "");
-                tvScoreA.setText(prev_score + 1 + "");
-
+                A=true;
+                onClickOneRun();
+                A=false;
             }
         });
 
-        butFourRun.setOnClickListener(new View.OnClickListener() {
+        butFourRunA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int prev_score = Integer.parseInt(tvScoreA.getText() + "");
-                tvScoreA.setText(prev_score + 4 + "");
+                A = true;
+                onClickFourRun();
+                A = false;
         }
         });
 
-        butSixRun.setOnClickListener(new View.OnClickListener() {
+        butSixRunA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int prev_score = Integer.parseInt(tvScoreA.getText() + "");
-                tvScoreA.setText(prev_score + 6 + "");
+                A = true;
+                onClickSixRun();
+                A = false;
             }
         });
+        butOneRunB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                B = true;
+                onClickOneRun();
+                B = false;
+            }
+        });
+
+        butFourRunB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                B = true;
+                onClickFourRun();
+                B = false;
+            }
+        });
+
+        butSixRunB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                B = true;
+                onClickSixRun();
+                B =false;
+            }
+        });
+    }
+    private void onClickSixRun(){
+        if(A){
+            tvScore = findViewById(R.id.tvScoreA);
+        }
+        if(B){
+            tvScore = findViewById(R.id.tvScoreB);
+        }
+        int prev_score = Integer.parseInt(tvScore.getText() + "");
+        tvScore.setText(prev_score + 6 + "");
+    }
+    private void onClickFourRun(){
+        if(A){
+            tvScore = findViewById(R.id.tvScoreA);
+        }
+        if(B){
+            tvScore = findViewById(R.id.tvScoreB);
+        }
+        int prev_score = Integer.parseInt(tvScore.getText() + "");
+        tvScore.setText(prev_score + 4 + "");
+    }
+    private void onClickOneRun(){
+        if(A){
+            tvScore = findViewById(R.id.tvScoreA);
+        }
+        if(B){
+            tvScore = findViewById(R.id.tvScoreB);
+        }
+        int prev_score = Integer.parseInt(tvScore.getText() + "");
+        tvScore.setText(prev_score + 1 + "");
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
+    android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/tvTeamA"
         android:layout_width="match_parent"
@@ -28,24 +33,72 @@
         android:layout_marginBottom="6dp"/>
 
     <Button
-        android:id="@+id/butOneRun"
+        android:id="@+id/butOneRunA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="1 Run"
         android:layout_marginBottom="6dp"
         />
     <Button
-        android:id="@+id/butFourRun"
+        android:id="@+id/butFourRunA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="4 Runs"
         android:layout_marginBottom="6dp"
         />
     <Button
-        android:id="@+id/butSixRun"
+        android:id="@+id/butSixRunA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="6 Runs"
         android:layout_marginBottom="6dp"
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTeamB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:text="Team B"
+            android:textAllCaps="true"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/tvScoreB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:text="0"
+            android:layout_marginBottom="6dp"/>
+
+        <Button
+            android:id="@+id/butOneRunB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 Run"
+            android:layout_marginBottom="6dp"
+            />
+        <Button
+            android:id="@+id/butFourRunB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4 Runs"
+            android:layout_marginBottom="6dp"
+            />
+        <Button
+            android:id="@+id/butSixRunB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6 Runs"
+            android:layout_marginBottom="6dp"
+            />
+    </LinearLayout>
 </LinearLayout>
