@@ -122,6 +122,5 @@ public class MainActivity extends AppCompatActivity {
         tvScore = findViewById(R.id.tvScoreA);
         tvScore.setText("0");
         tvScore = findViewById(R.id.tvScoreB);
-        tvScore.setText("0");
-    }
+        tvScore.setText("0"); }
 }
