@@ -11,13 +11,14 @@ public class MainActivity extends AppCompatActivity {
 
     boolean A=false,B=false;
     TextView tvScore;
-    Button  butOneRunA,butFourRunA,butSixRunA,butOneRunB,butFourRunB,butSixRunB;
+    Button  butReset,butOneRunA,butFourRunA,butSixRunA,butOneRunB,butFourRunB,butSixRunB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        butReset = findViewById(R.id.butReset);
         butOneRunB = findViewById(R.id.butOneRunB);
         butFourRunB = findViewById(R.id.butFourRunB);
         butSixRunB = findViewById(R.id.butSixRunB);
@@ -77,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 B =false;
             }
         });
+
+        butReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickReset();
+            }
+        });
     }
     private void onClickSixRun(){
         if(A){
@@ -107,5 +115,13 @@ public class MainActivity extends AppCompatActivity {
         }
         int prev_score = Integer.parseInt(tvScore.getText() + "");
         tvScore.setText(prev_score + 1 + "");
+    }
+
+
+    public void onClickReset() {
+        tvScore = findViewById(R.id.tvScoreA);
+        tvScore.setText(null);
+        tvScore = findViewById(R.id.tvScoreB);
+        tvScore.setText(null);
     }
 }
