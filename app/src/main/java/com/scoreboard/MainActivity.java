@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickReset() {
         tvScore = findViewById(R.id.tvScoreA);
-        tvScore.setText(null);
+        tvScore.setText("0");
         tvScore = findViewById(R.id.tvScoreB);
-        tvScore.setText(null);
+        tvScore.setText("0");
     }
 }
